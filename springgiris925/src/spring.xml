@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<bean id="beanPersonel" class="com.hacidoganilbars.deneme.Personel">
+
+		<property name="adi" value="Hacı Doğan" />
+
+		<property name="soyadi" value="İlbars" />
+
+		<property name="adres">
+			<null />
+		</property>
+
+		<property name="gorevi" value=""></property>
+
+		<property name="anneAdi" value="" />
+
+		<property name="babaAdi">
+			<value></value>
+			<!-- value -->
+		</property>
+
+		<property name="telNo">
+			<value type="java.lang.String"></value>
+			<!-- value type="java.lang.String" -->
+		</property>
+
+		<property name="dogumYili">
+			<value>1987</value>
+		</property>
+
+		<property name="maasi" value="5000" />
+
+		<property name="medeniHali" value="false" />
+
+		<property name="ehliyet">
+			<value type="boolean">true</value>
+		</property>
+
+	</bean>
+
+
+
+</beans>

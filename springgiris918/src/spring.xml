@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean 'a dair yapılandırma bilgileri -->
+	<bean id="beanA" class="com.hacidoganilbars.deneme.A" />
+	<bean id="beanB" class="com.hacidoganilbars.deneme.B" scope="singleton"
+		lazy-init="true">
+		<constructor-arg ref="beanA" />
+	</bean>
+	<!-- <bean id="beanC" class="com.hacidoganilbars.deneme.C"> -->
+	<!-- <constructor-arg ref="beanA" /> -->
+	<!-- <constructor-arg ref="beanB" /> -->
+	<!-- </bean> -->
+
+	<bean id="beanC" class="com.hacidoganilbars.deneme.C">
+		<constructor-arg type="int" value="1987" />
+		<constructor-arg type="java.lang.String" value="Hacı Doğan ilbars" />
+	</bean>
+
+
+</beans>

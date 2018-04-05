@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="personelServisBean" class="com.hacidoganilbars.PersonelServis">
+		<property name="adi" value="Hacı Doğan" />
+		<property name="soyadi" value="İlbars" />
+		<property name="tecrube" value="3" />
+	</bean>
+
+	<bean id="cagirilanMetodunOncesiVeSonrasiOzellikleriBean"
+		class="com.hacidoganilbars.aop.CagirilanMetodunOncesiVeSonrasiOzellikleri" />
+
+<!-- 	<bean id="basitBirPointcutBean" class="org.springframework.aop.support.NameMatchMethodPointcut"> -->
+<!-- 		<property name="mappedName" value="selamVer" /> -->
+<!-- 	</bean> -->
+
+
+<!-- 	<bean id="basitBirAdvisorBean" -->
+<!-- 		class="org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor"> -->
+<!-- 		<property name="pointcut" ref="basitBirPointcutBean" /> -->
+<!-- 		<property name="advice" -->
+<!-- 			ref="cagirilanMetodunOncesiVeSonrasiOzellikleriBean" /> -->
+<!-- 	</bean> -->
+
+	<bean id="basitBirRegexAdvisorBean"
+		class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+		<property name="patterns">
+			<list>
+				<value>.*sel.*</value>
+			</list>
+		</property>
+		<property name="advice"
+			ref="cagirilanMetodunOncesiVeSonrasiOzellikleriBean" />
+	</bean>
+
+
+	<bean id="personelServisBeanProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="personelServisBean" />
+		<property name="interceptorNames">
+			<list>
+<!-- 				<value>basitBirAdvisorBean</value> -->
+				<value>basitBirRegexAdvisorBean</value>
+			</list>
+		</property>
+	</bean>
+
+
+</beans>

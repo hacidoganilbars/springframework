@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean 'a dair yapılandırma bilgileri -->
+	<bean id="yakit1" class="com.hacidoganilbars.deneme.Mazot" />
+	<bean id="yakit2" class="com.hacidoganilbars.deneme.Benzin" />
+	<bean id="yakit3" class="com.hacidoganilbars.deneme.Elektrik" />
+	<bean id="arabam" class="com.hacidoganilbars.deneme.Araba">
+		<constructor-arg ref="yakit1" />
+	</bean>
+	<bean id="arabam1" class="com.hacidoganilbars.deneme.Araba">
+		<constructor-arg ref="yakit2" />
+	</bean>
+		<bean id="arabam2" class="com.hacidoganilbars.deneme.Araba">
+		<constructor-arg ref="yakit3" />
+	</bean>
+	
+
+</beans>

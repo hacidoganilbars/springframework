@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean 'a dair yapılandırma bilgileri -->
+	<bean id="selamim" class="com.hacidoganilbars.deneme.Selam">
+		<property name="mesaj"
+			value="
+Aşkın aldı benden beni
+Bana seni gerek seni
+Ben yanarım dün ü günü
+Bana seni gerek seni
+
+Ne varlığa sevinirim
+Ne yokluğa yerinirim
+Aşkın ile avunurum
+Bana seni gerek seni
+
+Aşkın aşıklar oldurur
+Aşk denizine daldırır
+Tecelli ile doldurur
+Bana seni gerek seni
+
+Aşkın şarabından içem
+Mecnun olup dağa düşem
+Sensin dünü gün endişem
+Bana seni gerek seni
+
+Sufilere sohbet gerek
+Ahilere ahret gerek
+Mecnunlara Leyla gerek
+Bana seni gerek seni
+
+Eğer beni öldüreler
+Külüm göğe savuralar
+Toprağım anda çağıra
+Bana seni gerek seni
+
+Cennet cennet dedikleri
+Birkaç köşkle birkaç huri
+İsteyene Ver anları
+Bana seni gerek seni
+
+Yunus'dürür benim adım
+Gün geçtikçe artar odum
+İki cihanda maksudum
+Bana seni gerek seni
+Yunus Emre "></property>
+	</bean>
+
+</beans>

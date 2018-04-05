@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="beanOgrenci" class="com.hacidoganilbars.deneme.Ogrenci">
+		<property name="adi" value="Hacı Doğan" />
+		<property name="soyAdi" value="İlbars" />
+		<property name="bolumu" value="Bilgisayar Teknolojileri ve Programlama" />
+		<property name="yasi" value="30" />
+	</bean>
+
+	<bean id="beanKoleksiyonlar" class="com.hacidoganilbars.deneme.Koleksiyonlar">
+
+		<!-- java.util.List -->
+		<property name="listler">
+			<list>
+				<value>571</value>
+				<ref bean="beanOgrenci" />
+				<bean class="com.hacidoganilbars.deneme.Ogrenci">
+					<property name="adi" value="Hacı Doğan" />
+					<property name="soyAdi" value="İlbars" />
+					<property name="bolumu" value="Bilgisayar Teknolojileri ve Programlama" />
+					<property name="yasi" value="31" />
+				</bean>
+			</list>
+		</property>
+
+		<!-- java.util.Set -->
+		<property name="setler">
+			<set>
+				<value>632</value>
+				<ref bean="beanOgrenci" />
+				<bean class="com.hacidoganilbars.deneme.Ogrenci">
+					<property name="adi" value="Yusuf" />
+					<property name="soyAdi" value="Karademir" />
+					<property name="bolumu" value="İşletme" />
+					<property name="yasi" value="27" />
+				</bean>
+			</set>
+		</property>
+
+		<!-- java.util.Map -->
+		<property name="mapler">
+			<map>
+				<entry key="Vaadin" value="Ömer Narman" />
+				<entry key="jsp" value-ref="beanOgrenci" />
+				<entry key="ZK">
+					<bean class="com.hacidoganilbars.deneme.Ogrenci">
+						<property name="adi" value="Ahmet" />
+						<property name="soyAdi" value="Alpaslan" />
+						<property name="bolumu" value="Bilgi Sistemleri" />
+						<property name="yasi" value="24" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+
+		<!-- java.util.Properties -->
+		<property name="propertiesler">
+			<props>
+				<prop key="PrimeFaces">Bilal Maskan</prop>
+				<prop key="JSF">Tevfik Bozkurt</prop>
+				<prop key="Hibernate">Hacı Doğan İlbars</prop>
+				<prop key="Spring">Mustafa Ergan</prop>
+			</props>
+		</property>
+	</bean>
+
+
+</beans>

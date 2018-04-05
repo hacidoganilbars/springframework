@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+
+	<aop:aspectj-autoproxy />
+
+	<bean id="personelServisBean" class="com.hacidoganilbars.impl.PersonelServisImpl">
+		<property name="adi" value="Hacı Doğan" />
+		<property name="soyadi" value="İlbars" />
+		<property name="tecrube" value="2" />
+	</bean>
+
+	<bean id="metodCagiriOncesiYapilacaklarBean" class="com.hacidoganilbars.aop.MetodCagiriOncesiYapilacaklar" />
+	<bean id="metodCagiriSonrasiYapilacaklarBean" class="com.hacidoganilbars.aop.MetodCagiriSonrasiYapilacaklar" />
+	<bean id="metodCagiriDonusDegeriSonrasindaYapilacaklarBean"
+		class="com.hacidoganilbars.aop.MetodCagiriDonusDegeriSonrasindaYapilacaklar" />
+
+	<aop:config>
+		<aop:aspect id="aspectler" ref="metodCagiriOncesiYapilacaklarBean">
+			<aop:pointcut
+				expression="execution(* com.hacidoganilbars.IPersonelServis.selamVer(..))"
+				id="pointCutBefore" />
+			<aop:before method="ilkGorev" pointcut-ref="pointCutBefore" />
+		</aop:aspect>
+
+
+		<aop:aspect id="aspectler" ref="metodCagiriSonrasiYapilacaklarBean">
+			<aop:pointcut
+				expression="execution(* com.hacidoganilbars.IPersonelServis.selamVer(..))"
+				id="pointCutAfter" />
+			<aop:after method="sonGorev" pointcut-ref="pointCutAfter" />
+		</aop:aspect>
+
+
+
+		<aop:aspect id="aspectler"
+			ref="metodCagiriDonusDegeriSonrasindaYapilacaklarBean">
+			<aop:pointcut
+				expression="execution(* com.hacidoganilbars.IPersonelServis.selamVer(..))"
+				id="pointCutAfterReturning" />
+			<aop:after-returning method="geriDonusSonrasiGorev"
+				returning="sonuc" pointcut-ref="pointCutAfterReturning" />
+		</aop:aspect>
+	</aop:config>
+
+</beans>

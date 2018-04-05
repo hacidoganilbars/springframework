@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+	<bean id="beanSehir" class="com.hacidoganilbars.Sehir">
+		<property name="mapimiz">
+			<util:map map-class="java.util.TreeMap">
+				<entry key="Ankara" value="06" />
+				<entry key="İstanbul" value="34" />
+				<entry key="Balıkesir" value="10" />
+				<entry key="Osmaniye" value="80" />
+			</util:map>
+		</property>
+	</bean>
+
+</beans>

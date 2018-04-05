@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="personelServisBean" class="com.hacidoganilbars.PersonelServis">
+		<property name="adi" value="Haci Doğan" />
+		<property name="soyadi" value="İlbars" />
+		<property name="tecrube" value="2" />
+	</bean>
+
+	<bean id="cagirilanMetodunOncesiVeSonrasiOzellikleri"
+		class="com.hacidoganilbars.aop.CagirilanMetodunOncesiVeSonrasiOzellikleri" />
+	<bean id="cagirilanMetodunOncesiVeSonrasiOzellikleri2"
+		class="com.hacidoganilbars.aop.CagirilanMetodunOncesiVeSonrasiOzellikleri2" />
+
+	<bean id="personelServisBeanProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="personelServisBean" />
+		<property name="interceptorNames">
+			<list>
+				<value>cagirilanMetodunOncesiVeSonrasiOzellikleri</value>
+				<value>cagirilanMetodunOncesiVeSonrasiOzellikleri2</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

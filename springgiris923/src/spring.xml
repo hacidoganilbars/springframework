@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+
+	<bean id="beanOgrenci" class="com.hacidoganilbars.deneme.Ogrenci">
+		<property name="ogrenciList">
+			<list>
+				<value>Özlem Koçak</value>
+				<value>Hacı Ahmet Yılmaz</value>
+				<value>İsmet Avcıoğlu</value>
+			</list>
+		</property>
+
+		<property name="ogrenciSet">
+			<set>
+				<value>Ufuk Gelen</value>
+				<value>Alihan Gödeoğlu</value>
+				<value>Adnan İlbars</value>
+			</set>
+		</property>
+
+		<property name="ogrenciMap">
+			<map>
+				<entry key="1" value="Hacı Doğan İlbars" />
+				<entry key="2" value="Sinem Toprak" />
+				<entry key="3" value="Mustafa Ergan" />
+			</map>
+		</property>
+
+		<property name="ogrenciProperties">
+			<props>
+				<prop key="Aşk">Yunus Emre</prop>
+				<prop key="Ölüm">Emine</prop>
+				<prop key="Hırs">Doğan</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

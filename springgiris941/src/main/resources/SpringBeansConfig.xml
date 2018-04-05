@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<!-- <context:annotation-config /> -->
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+
+
+	<bean id="beanDers" class="com.hacidoganilbars.Ders">
+		<property name="puan" value="85" />
+		<property name="ders" value="Fizik" />
+		<!-- <property name="puan" ref="ogrenciBean"/> -->
+	</bean>
+
+	<bean id="ogrenciBean" class="com.hacidoganilbars.Ogrenci">
+		<property name="adi" value="Hacı Doğan" />
+		<property name="soyadi" value="İlbars" />
+		<property name="yasi" value="30" />
+	</bean>
+
+	<bean id="ogrenciBean2" class="com.hacidoganilbars.Ogrenci">
+		<property name="adi" value="Hakan" />
+		<property name="soyadi" value="Ceylan" />
+		<property name="yasi" value="32" />
+	</bean>
+
+	<bean id="ogrenciBean3" class="com.hacidoganilbars.Ogrenci">
+		<property name="adi" value="Özlem" />
+		<property name="soyadi" value="Koçak" />
+		<property name="yasi" value="24" />
+	</bean>
+
+</beans>
